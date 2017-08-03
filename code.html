@@ -2,17 +2,17 @@
 <html>
     <head>
         <!--Title WebPage-->
-        <title>Hola Mundo, esto es la prueba de que el titulo funciona muy bien!</title>
+        <title>Hola Mundo!, Hello World!, this it's the title of the Web Page</title>
 
-
+        <!--Code for script-->
         <SCRIPT>
             var Version = navigator.appVersion;
             var Nom = navigator.appName;
             var texte = document.title;
-            var width = 30;
+            var width = 30;     //Limite del texto que mostrara
             var strLen = texte.length;
             var pos = 1 - width;
-            var time = 100;
+            var time = 100;     //Tiempo que permanece el texto
             
             Titre();
             
@@ -28,11 +28,21 @@
                     scroll = scroll + texte.substring(pos, pos + width);
                     for (var i=scroll.length; i<=width; i++) scroll = scroll + " ";
                 }
-                if (Nom == 'Microsoft Internet Explorer','Mozilla FireFox','Opera','Google Chrome','Safari') document.title = scroll;
+                if (Nom == 'Microsoft Internet Explorer','Mozilla FireFox','Opera','Google Chrome','Safari') {
+                    document.title = scroll;
+                }
                 setTimeout("Titre()",time);
             }
         </SCRIPT>
     </head>
     <body>
+
+        <h1>Mira en la barra superior en el titulo de la página</h1>
+        <h2 id="mostrar">Se te tiene que mostrar el texto</h2>
+        <p><br> ########## <br>
+            <script type="text/javascript"> 
+                document.writeln(texte); 
+            </script> <br> ########## </p>
+
     </body>
 </html>
