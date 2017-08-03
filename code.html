@@ -1,0 +1,38 @@
+<!--Web Code by Jorge López Gil-->
+<html>
+    <head>
+        <!--Title WebPage-->
+        <title>Hola Mundo, esto es la prueba de que el titulo funciona muy bien!</title>
+
+
+        <SCRIPT>
+            var Version = navigator.appVersion;
+            var Nom = navigator.appName;
+            var texte = document.title;
+            var width = 30;
+            var strLen = texte.length;
+            var pos = 1 - width;
+            var time = 100;
+            
+            Titre();
+            
+            function Titre(){
+                var scroll = "";
+                pos++;
+                if (pos == strLen) pos = 1 - width;
+                if (pos<0){
+                    for (var i=1; i<=Math.abs(pos); i++) scroll = scroll + " ";
+                    scroll = scroll + texte.substring(0, width - i + 1);
+                    for (var i=scroll.length; i<=width; i++) scroll = scroll + " ";
+                } else{
+                    scroll = scroll + texte.substring(pos, pos + width);
+                    for (var i=scroll.length; i<=width; i++) scroll = scroll + " ";
+                }
+                if (Nom == 'Microsoft Internet Explorer','Mozilla FireFox','Opera','Google Chrome','Safari') document.title = scroll;
+                setTimeout("Titre()",time);
+            }
+        </SCRIPT>
+    </head>
+    <body>
+    </body>
+</html>
